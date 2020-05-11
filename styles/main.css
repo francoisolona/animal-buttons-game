@@ -1,0 +1,285 @@
+body{
+    margin: 0;
+}
+
+/* Background Music */
+/* PLEASE READ : I know backgroundMusic.mp3 is pretty heavy, but I thought it would be okay as it is the only background music we can toggle on the site. I also managed to make it as light as possible thanks to https://www.online-convert.com/ */
+
+.musicToggle{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 2vh;
+    left: 90vw;
+    font-family: 'Rubik', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #f5f6fa;
+    cursor: pointer;
+}
+
+.musicToggle p{
+    margin: 0 0.25vw 0 0;
+}
+
+.musicToggle img{
+    width: 2vw;
+}
+
+/* Game */
+
+.animalGame{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+    justify-content: center;
+    background: url(../images/backgroundFarm.jpg) no-repeat;
+    background-size: cover;
+    font-family: 'Pangolin', cursive;
+    font-size: 2vw;
+}
+
+.animalGame h1{
+    color: #dc143c;
+    text-shadow: 2px 2px 0 #EAEAEA, 2px -2px 0 #EAEAEA, -2px 2px 0 #EAEAEA, -2px -2px 0 #EAEAEA, 2px 0px 0 #EAEAEA, 0px 2px 0 #EAEAEA, -2px 0px 0 #EAEAEA, 0px -2px 0 #EAEAEA;
+}
+
+.startButton{
+    cursor: pointer;
+    margin: 0;
+}
+
+.startButton:hover{
+    font-size: 150%;
+}
+
+.allButtons{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.line{
+    display: flex;
+    flex-direction: row;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 18vh;
+    margin: 2vw;
+}
+
+/* Buttons images */
+
+.dog img{
+    width: 12vw;
+}
+
+.cat img{
+    width: 12vw;
+}
+
+.cow img{
+    width: 12vw;
+}
+
+.pig img{
+    width: 10vw;
+}
+
+.chicken img{
+    width: 10vw;
+}
+
+.horse img{
+    width: 12vw;
+}
+
+.sheep img{
+    width: 12vw;
+}
+
+.donkey img{
+    width: 10vw;
+}
+
+.button img{
+    cursor: pointer;
+}
+
+/* Right/Wrong answer screen */
+
+.checkAnswer{
+    position: absolute;
+    z-index: 99;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Pangolin', cursive;
+    color: #f5f5f5;
+    font-size: 30vh;
+}
+
+.result{
+    margin: 0;
+    margin-bottom: 5vh;
+}
+
+.wasClicked{
+    font-size: 8vh;
+}
+
+/* End screen */
+
+.endScreen{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: url(../images/backgroundFarm.jpg) no-repeat;
+    background-size: cover;
+    font-family: 'Pangolin', cursive;
+    color: #dc143c;
+    text-shadow: 2px 2px 0 #EAEAEA, 2px -2px 0 #EAEAEA, -2px 2px 0 #EAEAEA, -2px -2px 0 #EAEAEA, 2px 0px 0 #EAEAEA, 0px 2px 0 #EAEAEA, -2px 0px 0 #EAEAEA, 0px -2px 0 #EAEAEA;
+}
+
+.endScreen .endLineOne{
+    font-size: 15vh;
+    margin: 0;
+    margin-bottom: 2.5vh;
+}
+
+.endScreen .endLineTwo{
+    font-size: 8vh;
+    margin: 0;
+    margin-bottom: 2.5vh;
+}
+
+.endScreen .restart{
+    display: flex;
+    justify-content: center;
+}
+
+.endScreen .restart .oldCalagan{
+    cursor: pointer;
+    width: 30%;
+}
+
+/* Noise changer interface */
+
+.changeNoise{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 2vh;
+    left: 2vh;
+    width: 9vw;
+    height: 20vh;
+    background: whitesmoke;
+    border-radius: 25%;
+    box-shadow: 0px 7px 16px 0px rgba(0,0,0,0.2);
+    font-family: 'Pangolin', cursive;
+    padding: 1vw;
+    text-align: center;
+    font-size: 3vh;
+    font-weight: bold;
+    color: #2196F3;
+}
+
+/* NOISE CHANGER SLIDER (CREDIT : based on https://www.w3schools.com/howto/howto_css_switch.asp) */
+
+/* The switch - the box around the slider */
+.switch{
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before{
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background: url(../images/pigPt1.png);
+    background-size: 26px;
+    transition: .4s;
+    margin-top: 6px;
+}
+
+input:checked + .slider{
+    background-color: #2196F3;
+}
+
+input:focus + .slider{
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before{
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round{
+    border-radius: 34px;
+}
+
+.slider.round:before{
+    border-radius: 50%;
+}
+
+/* FOOTER */
+
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #2f3640;
+    padding: 4vh;
+}
+
+footer p{
+    margin: 8px 0 8px 0;
+    font-family: 'Rubik', sans-serif;
+    color: #f5f6fa;
+}
+
+footer p strong{
+    text-decoration: none;
+    font-weight: 500;
+}
