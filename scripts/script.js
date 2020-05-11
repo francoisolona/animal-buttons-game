@@ -173,13 +173,13 @@ musicToggle.addEventListener('click', () =>
     if(isPlaying === false) // if the background music is not already playing, you can activate it.
     {
         isPlaying = true
-        musicOnOff.setAttribute('src', './images/soundOn.png')
+        musicOnOff.setAttribute('src', './images/soundon.png')
         backgroundMusic.play()
     }
     else if(isPlaying === true) // if the background music is already playing, you can pause it.
     {
         isPlaying = false
-        musicOnOff.setAttribute('src', './images/soundOff.png')
+        musicOnOff.setAttribute('src', './images/soundoff.png')
         backgroundMusic.pause()
     }
     
